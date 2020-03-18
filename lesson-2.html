@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function divideToArray(number) {
+		let firstNum = parseInt(number % 10);
+		let secondNum = parseInt(number % 100 / 10);
+		let thirdNum = parseInt(number % 1000 / 100);
+		let fourthNum = parseInt(number / 1000);
+		return [firstNum, secondNum, thirdNum, fourthNum];
+		}
+		function generationNumber(min, max) {
+			return parseInt(Math.random() * (max - min) + min);
+		}
+		function bullsAndCows(arrayAuto,arrayUser){
+			let bullCount = 0;
+			let cowCount = 0;
+			let minusArray = 1; // отнимаем от массива на быков
+				for(i = 0; i <= 3; i++) {
+					let minusArraySecondCircle = 1; // отнимаем от массива на коров
+					if(arrayUser[arrayUser.length - 1] == arrayAuto[arrayAuto.length - minusArray]) {
+						 bullCount++;
+					}
+					for (j = 0; j <= 3; j++){
+						if(arrayUser[arrayUser.length -1] == arrayAuto[arrayAuto.length - minusArraySecondCircle]) {
+								cowCount++;
+						}
+						if( arrayUser.length - 1 == arrayAuto.length - minusArraySecondCircle) {
+							if(arrayUser[arrayUser.length -1] == arrayAuto[arrayAuto.length - minusArraySecondCircle]) {
+								cowCount--;
+							}
+						}
+						minusArraySecondCircle++;
+					}
+					arrayUser.splice(arrayUser.length -1, 1);
+					minusArray++;
+					// arrayAuto.splice(arrayAuto.length -1, 1);
+				}
+				return [bullCount,cowCount];
+		}
+		let autoNumber = generationNumber(1000, 9999);
+		let userAnswer = +prompt ("Введите четырехзначное число");
+		let arrayAutoNumber = divideToArray(autoNumber);
+		let arrayUserAnswer = divideToArray(userAnswer);
+		let bullsCows = bullsAndCows(arrayAutoNumber,arrayUserAnswer);
+		let bullCase = " ";
+		let cowCase = " ";
+			//пошел выбор склонения слова исходя из числительного
+			switch (bullsCows[0]){
+				case 0:
+				bullCase = " быков";
+				break;
+				case 1: 
+				bullCase = " бык";
+				break;
+				default:
+				bullCase = " быка";
+				break;
+			}
+			switch (bullsCows[1]){
+				case 0:
+				сowCase = " коров";
+				break;
+				case 1: 
+				сowCase = " корова";
+				break;
+				default:
+				сowCase = " коровы";
+				break;
+			}
+			alert("У вас " + bullsCows[0] + bullCase + " и " + bullsCows[1] + cowCase);
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//Задание третьего урока
+		document.write("Задание 1 третьего урока:<br>");
+		let x = 0;
+				while (x <= 100){
+					document.write(x + " ");
+					x++;
+				}
+
+		//задание 2 
+		document.write("<br>");
+		document.write("Задание 2 третьего урока:<br>");
+			function addToBasket(basket){
+				let sum = 0;
+				for (let i = 0; i <= basket.length - 1; i++){
+					sum += basket[i];
+				}
+				return sum;
+			}
+			let basket = [];
+			let plusProduct = 0;
+			let sum;
+			while (plusProduct != "нет") {
+				let product = +prompt("Введите стоимость товара");
+				basket.push(product);
+				sum = addToBasket(basket);
+				alert("В корзине товаров на сумму " + sum + " рублей");
+				plusProduct = prompt("Желаете добавить еще? <br> Напишите слово 'НЕТ', если вы закончили с покупками. Иначе нажмите ОК").toLowerCase();
+			}
+			document.write("В корзине товаров на сумму " + sum + " рублей");
+		//задание 3 
+			document.write("<br>");
+			document.write("Задание 3 третьего урока:<br>");
+				for (let i = 0; i < 10; document.write(i++)){}
+		// задание	4
+		document.write("<br>");
+		document.write("Задание 4 третьего урока в консоли:<br>")
+	let star = "x";
+		for(let j = 0; j <= 20; j++) {
+			for(let k = 0; k < j; k++) {
+				console.log(star);
+			}
+			console.log("\n")
+		}		
+	</script>
+</body> 
+</html>

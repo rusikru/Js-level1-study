@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//первое задание
+	function NumberToObject(number) {
+		let one = number % 10;
+		let ten = parseInt(number / 10 % 10);
+		let hundred = parseInt(number / 100);
+		object.единицы = one;
+		object.десятки = ten;
+		object.сотни = hundred;
+	}
+	let object = {
+		'единицы': " ",
+		'десятки':" ",
+		'сотни':" ",
+	}
+	number = +prompt("Введите число");
+	if(number > 999 || number < 0){
+		console.log(object);
+	} else{
+		NumberToObject(number);
+	console.log(object);
+	}
+	// второе задание
+	function Fruit( color, form ) {
+		this.color = color;
+		this.form = form;
+		this.showFruit = function() {
+		console.log(color,form);
+		}
+	};
+		let apple = new Fruit('зеленое', 'круглое');
+		let banan = new Fruit('желтый', 'длинный');
+
+			// третья задача
+		function comparison (a, b) {
+		  let result = false;
+
+		  if (a === b) result = true;
+		  if (a.length === b.length) {
+		  	for(let i = 0; i <= a.length - 1; i++){
+		  		if(a[a.length - 1] == b[b.length - 1]) {
+		  			result = true;
+		  			a.pop();
+		  			b.pop();
+		  		} else {
+		  			result = false;
+		  			break;
+		  		}
+		  	}
+		  }
+		  // третья задача первый способ метода
+
+
+		  // if (JSON.stringify(a)===JSON.stringify(b)) {
+		  // 	result = true;
+		  // }
+
+		  // третья задача второй способ метода
+		 for(let i in a) {
+			if(a[i] ===b[i]) {
+		  	result = true;
+			 } else{
+			 	result = false;
+			 	break;
+			 }
+		  }
+	}
+		// comparison({name: "конь", old: 17}, {name: "конь", old: 18});
+		comparison([1,2,3], [1,2,3]);
+	</script>
+</body>
+</html>

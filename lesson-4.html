@@ -7,26 +7,26 @@
 <body>
 	<script type="text/javascript">
 	//первое задание
-	// function NumberToObject(number) {
-	// 	let one = number % 10;
-	// 	let ten = parseInt(number / 10 % 10);
-	// 	let hundred = parseInt(number / 100);
-	// 	object.единицы = one;
-	// 	object.десятки = ten;
-	// 	object.сотни = hundred;
-	// }
-	// let object = {
-	// 	'единицы': " ",
-	// 	'десятки':" ",
-	// 	'сотни':" ",
-	// }
-	// number = +prompt("Введите число");
-	// if(number > 999 || number < 0){
-	// 	console.log(object);
-	// } else{
-	// 	NumberToObject(number);
-	// console.log(object);
-	// }
+	function NumberToObject(number) {
+		let one = number % 10;
+		let ten = parseInt(number / 10 % 10);
+		let hundred = parseInt(number / 100);
+		object.единицы = one;
+		object.десятки = ten;
+		object.сотни = hundred;
+	}
+	let object = {
+		'единицы': " ",
+		'десятки':" ",
+		'сотни':" ",
+	}
+	number = +prompt("Введите число");
+	if(number > 999 || number < 0){
+		console.log(object);
+	} else{
+		NumberToObject(number);
+	console.log(object);
+	}
 	// второе задание
 	function Fruit( color, form ) {
 		this.color = color;

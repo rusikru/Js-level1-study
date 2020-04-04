@@ -1,0 +1,45 @@
+#chess{
+
+	width:600px;
+
+}
+.square{
+	border: 1px solid #212121;
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+    float: left;
+    background-color: white;
+     text-align: center;
+    font-size: 50px;
+    line-height: 70px;
+}
+.black{
+		background-color: rgba(54, 52, 52);
+}
+.white{
+	background-color: white;
+}
+.green {
+	background-color: green;
+}
+
+
+/*.whiteDiv{
+	border: 1px solid #212121;
+	width: 70px;
+	height: 70px;
+	  display: inline-block;
+    float: left;
+    text-align: center;
+    font-size: 50px;
+    line-height: 70px;
+}
+.blackDiv{
+	border: 1px solid #212121;
+	width: 70px;
+	height: 70px;
+	background-color: rgba(54, 52, 52);
+	    display: inline-block;
+    float: left;
+}*/
